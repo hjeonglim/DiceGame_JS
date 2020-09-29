@@ -1,22 +1,20 @@
 var randomNumber1 = Math.floor(Math.random() * 6) + 1;
 var randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
-started = false;
 
 // button is clicked to start the game
-$(".btn").click(function(){
-    // prompt("Who do you want to play? Player 1 or Player 2")
-    if (!started) {
-        diceRoll();
-        gameResult();
-        started = true;
-    }
+// $(".btn").click(function(){
+//     // prompt("Who do you want to play? Player 1 or Player 2")
+//     diceRoll();
+//     gameResult();
+// });
 
+$(".img1").click(function(){
+    diceRoll();
+    gameResult();
 });
 
 // Player 1: you (button click, random number is chosen)
-
-
 function diceRoll() {
     // player 1
     var randomImageSource1 ="./images/dice" + randomNumber1 + ".png";
@@ -32,23 +30,22 @@ function diceRoll() {
 function gameResult(){
     if (randomNumber1 > randomNumber2){
         $(".heading").text("🚩 Player 1 Won!");
-        startOver();
+
     }
     else if (randomNumber1 < randomNumber2) {
         $(".heading").text("Player 2 Won 🚩");
-        startOver();
+
     }
     else if (randomNumber1 === randomNumber2) {
         $(".heading").text("Draw");
-        startOver();
+
     }
 };
 
-// Start game again
-function startOver() {
-    started = false;
-}
-
+// Start game again to refresh page
+$(document).keypress(function() {
+    location.reload();
+});
 
 
 
