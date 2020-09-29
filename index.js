@@ -1,5 +1,9 @@
+//to know rerun the game
+var gameOver = false;
+
 // image clicked to start play
-$(".img1").click(function(){
+
+startPlay = $(".img1").click(function(){
     diceRoll();
     gameResult();
 });
@@ -27,27 +31,35 @@ function gameResult(){
         you_won++
         $(".heading").text("🚩 Player 1 Won!");
         $(".score_board").text(`Current Score is: ${you_won} : ${computer_won}`)
-
+        replay();
     }
     else if (randomNumber1 < randomNumber2) {
         $(".heading").text("Player 2 Won 🚩");
         computer_won++
         $(".score_board").text(`Current Score is: ${you_won} : ${computer_won}`)
+        gameOver;
     }
     else if (randomNumber1 === randomNumber2) {
         $(".heading").text("Draw");
         $(".score_board").text(`Current Score is: ${you_won} : ${computer_won}`)
-
+        !gameOver
+        replay();
     }
 };
 
 // Start game again to refresh page
-$(document).keypress(function() {
+reload = $(document).keypress(function() {
     location.reload();
 });
 
-
-
+// Replay
+function replay() {
+    !gameOver
+    if (!gameOver) {
+        reload
+        startPlay;
+    }
+}
 
 
 

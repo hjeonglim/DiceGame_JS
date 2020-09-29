@@ -34,22 +34,10 @@ footer {
 
 .dice {
   display: inline-block;
-
+  margin-bottom: 50px;
 }
 
-.btn {
-    background-color: #4ECCA3;
-    color: #393E46;
-    font-size: 2.5rem;
-    font-weight: normal;
-    padding: 20px 15px;
-    margin: 100px 0 30px;
-    border-radius: 10px;
-    line-height: 1.5;
-    font-family: 'Indie Flower', cursive;
-}
-
-.btn:hover {
-    background-color: #6DE9BE;
+.score_board {
     color: #EEEEEE;
+    margin: 30px auto 50px auto;
 }
